@@ -17,3 +17,9 @@
 pnpm install
 pnpm run dev
 ```
+
+<br>
+
+## 라이선스
+
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)

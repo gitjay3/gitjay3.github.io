@@ -54,7 +54,6 @@ const projects = [
       'Docker Multi-stage 빌드, HTTPS/SSL 설정, dotenvx 환경변수 암호화',
     ],
     link: 'https://github.com/boostcampwm2025/web20-bibimbap',
-    demo: 'https://bookstcamp.duckdns.org',
   },
 ]
 
@@ -128,11 +127,6 @@ function App() {
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 GitHub <ExternalLink size={14} />
               </a>
-              {project.demo && (
-                <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                  Demo <ExternalLink size={14} />
-                </a>
-              )}
             </div>
           </div>
         ))}

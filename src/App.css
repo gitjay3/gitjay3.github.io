@@ -200,23 +200,21 @@
 
 /* Education */
 .education-item {
+  position: relative;
   margin-bottom: 28px;
 }
 
-.education-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.education-header strong {
+.education-name {
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-.education-header .period {
-  margin-left: auto;
+.education-item .period {
+  position: absolute;
+  top: 0;
+  right: 0;
   font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 .major {
@@ -246,16 +244,14 @@
 
   .skill-category {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 4px;
   }
 
-  .education-header {
-    flex-wrap: wrap;
-  }
-
-  .education-header .period {
-    width: 100%;
-    margin-left: 0;
+  .education-item .period {
+    position: static;
+    display: block;
     margin-top: 4px;
+    font-size: 0.85rem;
   }
 }

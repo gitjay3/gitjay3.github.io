@@ -136,19 +136,15 @@ function App() {
       <section className="section">
         <h2>Education</h2>
         <div className="education-item">
-          <div className="education-header">
-            <strong>{education.school.name}</strong>
-            <span className="period">{education.school.period}</span>
-          </div>
+          <strong className="education-name">{education.school.name}</strong>
           <p className="major">{education.school.major}</p>
+          <span className="period">{education.school.period}</span>
         </div>
         {education.programs.map((item, index) => (
           <div key={index} className="education-item">
-            <div className="education-header">
-              <strong>{item.name}</strong>
-              <span className="period">{item.period}</span>
-            </div>
+            <strong className="education-name">{item.name}</strong>
             <p className="major">{item.description}</p>
+            <span className="period">{item.period}</span>
           </div>
         ))}
       </section>

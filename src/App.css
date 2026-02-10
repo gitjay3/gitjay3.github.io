@@ -165,7 +165,24 @@
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--text);
-  margin-bottom: 6px;
+  margin-bottom: 16px;
+}
+
+.detail-summary {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.detail-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 0 6px 0;
+}
+
+.detail-description:last-child {
+  margin-bottom: 0;
 }
 
 .project-links {

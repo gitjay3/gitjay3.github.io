@@ -1,5 +1,5 @@
 import './App.css'
-import { Mail, Github, Server, Database, Cloud, ExternalLink, PenLine, Code2 } from 'lucide-react'
+import { Mail, Github, Server, Database, Cloud, ExternalLink, PenLine, Code2, Download } from 'lucide-react'
 
 const profile = {
   name: '박재성',
@@ -63,7 +63,7 @@ const projects = [
         detail: '처음에는 IP 기반으로 Rate Limiting을 적용했는데, VPN을 사용하면 IP를 바꿔서 우회할 수 있는 문제가 있었습니다. 그래서 CustomThrottlerGuard에서 유저 ID를 추적 키로 사용하도록 재설계했습니다.\n또한 전역으로 Throttler를 적용하니 일반 페이지 탐색이나 폴링에도 429 에러가 발생해서, 로그인과 예약 엔드포인트에만 각각 다른 제한값을 설정하는 방식으로 바꿨습니다.',
       },
     ],
-    link: 'https://github.com/gitjay3/web20-bibimbap',
+    link: 'https://github.com/gitjay3/Bookstcamp',
   },
 ]
 
@@ -72,7 +72,13 @@ function App() {
     <div className="container">
       {/* Header */}
       <header className="header" >
-        <h1>{profile.name}</h1>
+        <div className="header-top">
+          <h1>{profile.name}</h1>
+          <button className="pdf-button" onClick={() => window.print()}>
+            <Download size={16} />
+            PDF 저장
+          </button>
+        </div>
         <p className="title">{profile.title}</p>
         <div className="contact">
           <a href={`mailto:${profile.email}`}>
@@ -115,7 +121,7 @@ function App() {
       </section>
 
       {/* Projects */}
-      <section className="section" >
+      <section className="section print-new-page" >
         <h2>Projects</h2>
         {projects.map((project, index) => (
           <div key={index} className="project">
@@ -148,7 +154,7 @@ function App() {
       </section>
 
       {/* Education */}
-      <section className="section">
+      <section className="section print-new-page">
         <h2>Education</h2>
         <div className="education-item">
           <strong className="education-name">{education.school.name}</strong>

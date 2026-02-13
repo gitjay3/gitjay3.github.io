@@ -11,10 +11,36 @@
   border-bottom: 1px solid var(--border);
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 4px;
+}
+
+.pdf-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.pdf-button:hover {
+  color: var(--text);
+  border-color: var(--text);
 }
 
 .header .title {
@@ -175,7 +201,7 @@
 }
 
 .detail-description {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.8;
   margin: 0 0 6px 0;
@@ -270,5 +296,70 @@
     display: block;
     margin-top: 4px;
     font-size: 0.85rem;
+  }
+}
+
+/* Print */
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  * {
+    overflow: visible !important;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 15mm;
+  }
+
+  .pdf-button {
+    display: none;
+  }
+
+  /* 새 페이지에서 시작하는 섹션 */
+  .print-new-page {
+    break-before: page;
+    page-break-before: always;
+    padding-top: 15mm;
+  }
+
+  /* 요소 내부 나눔 제어 */
+  .project-header {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .project-description {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .project-meta {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .project li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .education-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 호버 효과 제거 */
+  .contact a::after,
+  .project-links a::after {
+    display: none;
   }
 }
